@@ -17,6 +17,7 @@ import { LoginComponent } from './home/login/login.component';
 import { InicioComponent } from './home/inicio/inicio.component';
 import { ConocenosComponent } from './home/conocenos/conocenos.component';
 import { InventarioComponent } from './home/inventario/inventario.component';
+import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { InventarioComponent } from './home/inventario/inventario.component';
     LoginComponent,
     InicioComponent,
     ConocenosComponent,
-    InventarioComponent
+    InventarioComponent,
+    MateriaComponent
   ],
   imports: [
     BrowserModule,

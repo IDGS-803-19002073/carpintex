@@ -9,14 +9,18 @@ import { InicioComponent } from './home/inicio/inicio.component';
 import { MenuComponent } from './menu_admin/menu.component';
 import { ConocenosComponent } from './home/conocenos/conocenos.component';
 import { InventarioComponent } from './home/inventario/inventario.component';
+import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
+import { AuthGuard } from './Auth/AuthGuard.component';
 
 const routes: Routes = [
   {path: '',component: InicioComponent, pathMatch:'full'},
   {path:'inicio',component: InicioComponent},
   {path:'conocenos',component: ConocenosComponent},
-  {path:'menu',component: MenuComponent},
-  {path:'inventario',component: InventarioComponent},
+  // {path:'menu',component: MenuComponent},
+  { path: 'admin-menu', component: MenuComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
 
+  {path:'inventario',component: InventarioComponent},
+  {path:'materia',component: MateriaComponent},
   {path:'Agregar', component: AgregarComponent},
   {path: 'verAlumnos',component: AlumnosComponent },
   {path: 'Editar/:id',component: EditarComponent },
