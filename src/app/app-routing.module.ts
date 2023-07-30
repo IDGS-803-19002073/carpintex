@@ -11,20 +11,21 @@ import { ConocenosComponent } from './home/conocenos/conocenos.component';
 import { InventarioComponent } from './home/inventario/inventario.component';
 import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
 import { AuthGuard } from './Auth/AuthGuard.component';
+import { SignupComponent } from './home/signup/signup.component';
 
 const routes: Routes = [
   {path: '',component: InicioComponent, pathMatch:'full'},
   {path:'inicio',component: InicioComponent},
   {path:'conocenos',component: ConocenosComponent},
-  // {path:'menu',component: MenuComponent},
   { path: 'admin-menu', component: MenuComponent, canActivate: [AuthGuard], data: { roles: ['admin'] } },
-
   {path:'inventario',component: InventarioComponent},
   {path:'materia',component: MateriaComponent},
   {path:'Agregar', component: AgregarComponent},
   {path: 'verAlumnos',component: AlumnosComponent },
   {path: 'Editar/:id',component: EditarComponent },
   {path: 'login',component: LoginComponent },
+  {path: 'signup',component: SignupComponent },
+
 
  
 ];;

@@ -1,53 +1,16 @@
-<div class="contenedor-padre">
-    <mat-toolbar class="barra" color="warn">
-      <mat-toolbar-row>
-        <button (click)="cajon.toggle()" mat-icon-button>
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>
-          CRUD Angular&nbsp;
-        </span>
-        <span>
-          <a mat-stroked-button href="">IDGS - UTL</a>
-        </span>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <mat-sidenav-container class="contenido">
-      <mat-sidenav style="min-width: 300px;" #cajon mode="side" opened>
-        <mat-nav-list>
-          <a mat-list-item routerLinkActive="active" [routerLink]="['/Agregar']">
-            <mat-icon color="accent">add</mat-icon>
-            Agregar Alumno
-          </a>
-          <a mat-list-item routerLinkActive="active" routerLink="verAlumnos">
-            <mat-icon color="primary">perm_identity</mat-icon>
-            Ver Alumnos
-          </a>
-   
-        </mat-nav-list>
-        <mat-accordion>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Más
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-   
-            <mat-nav-list>
-              <a mat-list-item href='#'>
-                Acerca de
-              </a>
-              <a mat-list-item href='#'>
-                Ayuda
-              </a>
-            </mat-nav-list>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </mat-sidenav>
-      <mat-sidenav-content class="padding-10">
-   
-          <router-outlet></router-outlet>
-   
-      </mat-sidenav-content>
-    </mat-sidenav-container>
+<div class="dashboard-container">
+  <nav class="sidenav">
+    <div class ="element text-right " style="font-weight: bold;"><p class="font-weight-bold">Carpintex Dashboard <i class="fa fa-sign-out" style="padding-left: 1em;" (click)="exit()"></i>  </div>
+    <!-- Opciones de navegación para el dashboard -->
+    <a [routerLink]="['/materia']" routerLinkActive="active"><i class="fas fa-industry" style="padding-right: 2em; margin-top: 1em;"></i> Materia Prima</a>
+    <a [routerLink]="['/Agregar']" routerLinkActive="active"><i class="fa-solid fa-users"style="padding-right: 2em;" ></i>Proveedor</a>
+    <a [routerLink]="['/materia']" routerLinkActive="active"><i class="fas fa-box" style="padding-right: 2em;"></i>Producto</a>
+    <a [routerLink]="['/Agregar']" routerLinkActive="active"><i class="fa fa-list" style="padding-right: 2em;"></i>      Pedido</a>
+    <a [routerLink]="['/Agregar']" routerLinkActive="active"><i class="fas fa-shipping-fast " style="padding-right: 2em;"></i>Envios</a>
+    <a [routerLink]="['/Agregar']" routerLinkActive="active"><i class="fa fa-shopping-basket" style="padding-right: 2em;"></i>Ventas    </a>
+    <a [routerLink]="['/Agregar']" routerLinkActive="active"><i class="fa fa-shopping-cart"style="padding-right: 2em;"></i>Compras    </a>
+  </nav>
+  <div class="main-content">
+    <router-outlet></router-outlet>
   </div>
+</div>

@@ -18,7 +18,10 @@ login(){
 this.authService.setUserRole('admin');
     this.router.navigate(['admin-menu'])
 
-  }
+  }else if(this.username == "user" && this.password == "user"){
+    this.authService.setUserRole('user');
+    this.router.navigate(['inicio'])
 }
 
+}
 }

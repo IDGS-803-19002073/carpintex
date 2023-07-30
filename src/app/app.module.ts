@@ -18,6 +18,7 @@ import { InicioComponent } from './home/inicio/inicio.component';
 import { ConocenosComponent } from './home/conocenos/conocenos.component';
 import { InventarioComponent } from './home/inventario/inventario.component';
 import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
+import { SignupComponent } from './home/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
     InicioComponent,
     ConocenosComponent,
     InventarioComponent,
-    MateriaComponent
+    MateriaComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

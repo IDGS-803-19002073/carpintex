@@ -7,11 +7,7 @@
     background: rgb(235, 234, 234);
     /* margin: 0; */
 }
-.black-line {
-    border: none;
-    border-top: 2px solid black;
-    width: 20em /* Ajusta el ancho de la línea según tus necesidades */
-  }
+
   
 
 section.info {
@@ -35,4 +31,20 @@ h4{
     background-size: cover;
     width: 100%;
     padding: 80px 0px;
+  }
+  .linea {
+    height: 5em; /* Altura deseada de la línea */
+    background-image: url(../../../assets//images/cta-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%; /* Ancho que abarcará toda la pantalla */
+    margin-top: 0; /* Eliminamos los márgenes por defecto */
+    position: relative; /* Permitir posicionar el texto dentro del div */
+  }
+
+  .texto {
+    /* position: absolute; */
+    color: #fff; /* Color del texto (puedes cambiarlo) */
+    font-size: 20px; /* Tamaño de fuente del texto (puedes cambiarlo) */
   }
