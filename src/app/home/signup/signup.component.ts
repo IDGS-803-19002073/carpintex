@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 
 })
 export class SignupComponent {
-    username!: string;
+    email!: string;
     password!: string;
     nombre!: string;
-    apellido!: string;
+    codigoPostal!: string;
+    estado!: string;
+    ciudad!: string;
 signup(){
     
 }

@@ -11,9 +11,19 @@
                         <form (ngSubmit)="signup()">
                             <h3>Crear Cuenta</h3>
                             <input type="text" name="nombre" [(ngModel)]="nombre" placeholder="Nombre">
-                            <input type="text" name="apellido" [(ngModel)]="apellido" placeholder="Apellido">
+                            <input type="text" name="email" [(ngModel)]="email" placeholder="Correo">
+                            <div class="row">
+                                <div class="col-md-8">
+                                  <input type="text" name="estado" [(ngModel)]="estado" placeholder="Estado">
 
-                            <input type="text" name="username" [(ngModel)]="username" placeholder="Usuario">
+                                </div>
+                                <div class="col-md-4">
+                                  <input type="text" name="codigoPostal" [(ngModel)]="codigoPostal" placeholder="CP">
+
+                                </div>
+                            </div>
+
+                            <input type="text" name="ciudad" [(ngModel)]="ciudad" placeholder="Ciudad">
                             <input type="password" name="password" [(ngModel)]="password" placeholder="Contraseña">
                             <button type="submit" class="submit">Registrarse</button>
                         </form>

@@ -12,6 +12,7 @@ import { InventarioComponent } from './home/inventario/inventario.component';
 import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
 import { AuthGuard } from './Auth/AuthGuard.component';
 import { SignupComponent } from './home/signup/signup.component';
+import { PedidosComponent } from './home/pedidos/pedidos.component';
 
 const routes: Routes = [
   {path: '',component: InicioComponent, pathMatch:'full'},
@@ -25,9 +26,7 @@ const routes: Routes = [
   {path: 'Editar/:id',component: EditarComponent },
   {path: 'login',component: LoginComponent },
   {path: 'signup',component: SignupComponent },
-
-
- 
+  {path: 'pedidos',component: PedidosComponent },
 ];;
 
 @NgModule({

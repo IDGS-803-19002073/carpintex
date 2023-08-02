@@ -46,4 +46,10 @@ public getAlumnos():Observable<AlumnosUtl[]>{
 agregarNuevoAlumno(datos:AlumnosUtl){
   return this.http.post('https://localhost:7132/api/Grupos',datos)
 }
+
+public getProductos():Observable<AlumnosUtl[]>{
+  return this.http.get<AlumnosUtl[]>('https://localhost:7241/api/Producto')
+}
+
+
 }

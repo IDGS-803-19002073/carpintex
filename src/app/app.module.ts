@@ -19,6 +19,7 @@ import { ConocenosComponent } from './home/conocenos/conocenos.component';
 import { InventarioComponent } from './home/inventario/inventario.component';
 import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
 import { SignupComponent } from './home/signup/signup.component';
+import { PedidosComponent } from './home/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SignupComponent } from './home/signup/signup.component';
     ConocenosComponent,
     InventarioComponent,
     MateriaComponent,
-    SignupComponent
+    SignupComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
