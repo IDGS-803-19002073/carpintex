@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,9 @@ import { InventarioComponent } from './home/inventario/inventario.component';
 import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
 import { SignupComponent } from './home/signup/signup.component';
 import { PedidosComponent } from './home/pedidos/pedidos.component';
+import { CarritoComponent } from './home/carrito/carrito.component';
+import { PagoComponent } from './home/pago/pago.component';
+
 
 @NgModule({
   declarations: [
@@ -36,15 +39,18 @@ import { PedidosComponent } from './home/pedidos/pedidos.component';
     InventarioComponent,
     MateriaComponent,
     SignupComponent,
-    PedidosComponent
+    PedidosComponent,
+    CarritoComponent,
+    PagoComponent,
   ],
   imports: [
+    // NgbModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

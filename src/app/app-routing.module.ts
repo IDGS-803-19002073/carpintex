@@ -13,6 +13,8 @@ import { MateriaComponent } from './menu_admin/materiaPrima/materia.component';
 import { AuthGuard } from './Auth/AuthGuard.component';
 import { SignupComponent } from './home/signup/signup.component';
 import { PedidosComponent } from './home/pedidos/pedidos.component';
+import { CarritoComponent } from './home/carrito/carrito.component';
+import { PagoComponent } from './home/pago/pago.component';
 
 const routes: Routes = [
   {path: '',component: InicioComponent, pathMatch:'full'},
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: 'login',component: LoginComponent },
   {path: 'signup',component: SignupComponent },
   {path: 'pedidos',component: PedidosComponent },
+  {path: 'carrito',component: CarritoComponent ,},
+  {path: 'pago',component: PagoComponent}
 ];;
 
 @NgModule({

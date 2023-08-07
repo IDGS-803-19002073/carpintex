@@ -2,37 +2,25 @@
 
 <div class="swiper-container" id="top">
     <div class="swiper-wrapper">
-
-<!-- 
-      <tbody>
-        <tr *ngFor="let alumno of dataSource | alumnoFilter:listFilter ">
-          <td>{{alumno.id}}</td>
-          <td>{{alumno.nombre | uppercase}}</td>
-          <td>{{alumno.edad}}</td>
-          <td>{{alumno.correo}}</td>
-
-            <td><button mat-flat-button color="primary" [routerLink]="['/Editar',alumno.id]" >Editar</button></td>
-        </tr>
-      </tbody> -->
-
       <!-- <div class="swiper-slide"> -->
         <section class="body">
-            <section *ngFor="let alumno of dataSource" class="container">
+            <section  class="container" >
                 <div class="row mb-4"  >
-                      <div class="card shadow-lg p-3 mb-5 mr-2 bg-white rounded" style="border: none; width: 18rem;">
+  
+                      <div class="card shadow-lg p-3 mb-5 m-2 bg-white rounded" style="border: none; width: 18rem;" *ngFor="let producto of dataSource ">
                         <img class="card-img-top " style="height: 16rem;" src="https://images.photowall.com/products/54675/surfboard.jpg?h=699&q=85" alt="Card image cap">
                         <div class="card-body"  >
-                          <h5 class="card-title">M</h5>
-                          <p class="text-danger">!Producto agotado!</p>
-                          <p class="text-danger">!Solo quedan !</p>
+                          <h5 class="card-title">{{producto.nombre}}</h5>
+                          <!-- <p class="text-danger">!Producto agotado!</p> -->
+                          <p class="text-danger">!Solo quedan {{producto.stock}}!</p>
                          <div class="row container">
-                            <p >alt  cm | anch  cm</p>
+                            <p >{{producto.altura}} cm alt | {{producto.ancho}} cm anch</p>
                           </div>
                           <div class="row container">
-                            <p >MXN </p>
+                            <p >$ {{producto.total}} </p>
                           </div>
                           <div class="row ">
-                            <!-- <button class="btn text-white btn-warning ml-3 col-4" (click)="agregarCanasta(id,nombreProducto,cantidad,precio)" id="btnAdd"><i class="bi bi-cart-dash"></i> añadir</button> -->
+                            <button class="btn text-white btn-warning ml-3 col-12" (click)="agregarCanasta(producto.id,producto.nombre,producto.stock,producto.total,producto.largo,producto.ancho,producto.altura)" id="btnAdd"><i class="bi bi-cart-dash"></i> Agregar al carrito</button>
                         </div>
                         </div>
                       </div>

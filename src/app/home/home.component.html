@@ -16,9 +16,10 @@
                         <li class="scroll-to-section"><a [routerLink]="['/conocenos']">Conocenos</a></li>
                         <li *ngIf="pedidos" class="scroll-to-section"><a [routerLink]="['/pedidos']">Pedidos</a></li>
 
-                        <li *ngIf="shoppingCart"  data-toggle="popover" [attr.data-content]="popoverContent" data-placement="bottom" title=" Cesta ">
-                                <a>
-                                    <i class="fas fa-shopping-cart color-white"></i>
+                        <li *ngIf="shoppingCart"  >
+                            <a>
+                                    <span id="txtPopupCantidad" class='text-white badge rounded-pill badge-notification bg-danger' data-toggle="popover" [attr.data-content]="popoverContent" data-placement="bottom" title=" Cesta ">{{counter}}</span>
+                                    <i class="fas fa-shopping-cart color-white" (click)="goShopping()" style="cursor: pointer;"></i>
                                 </a>
                             </li>
                        <div *ngIf="login"> <li ><a [routerLink]="['/login']"><i class="fa fa-user-circle" ></i></a></li> </div>
