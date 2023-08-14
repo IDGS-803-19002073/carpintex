@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { AlumnosUtl } from 'src/app/interfaces/utl.Interface';
+import { AlumnosUtl } from 'src/app/interfaces/Home.Interface';
  
 @Pipe({
   name: 'alumnoFilter'

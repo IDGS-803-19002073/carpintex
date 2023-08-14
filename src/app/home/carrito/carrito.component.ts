@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Auth/AuthService.component';
 
 declare var $: any;
+declare var Toastify: any;
+
 
 @Component({
   selector: 'app-carrito',
@@ -32,6 +34,30 @@ export class CarritoComponent {
         this.router.navigate(['pago']);
       }else{
         this.router.navigate(['login']);
+        Toastify({
+          text: "¡Para realizar una compra debes estar logueado!",
+          offset: {
+            x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: 100 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+          backgroundColor: "red",
+        }).showToast();
+        // Swal.fire({
+        //   title: 'Inciar sesión!',
+        //   text: 'Para realizar una compra debes estar logueado',
+        //   imageUrl: 'https://cdn-icons-png.flaticon.com/512/1680/1680012.png',
+        //   imageWidth: 100,
+        //   imageHeight: 100,
+        //   imageAlt: 'Custom image',
+        //   showConfirmButton: false,
+        //   timer: 1500
+        // })
+        // Swal.fire({
+        //   position: 'center',
+        //   // icon: 'info',
+        //   title: '¡Debes iniciar sesión!',
+
+        // })
       }
     }
     agregar(id:number){
@@ -47,7 +73,7 @@ export class CarritoComponent {
           }
         }
         localStorage.setItem('data', JSON.stringify(this.data));
-
+        
       }
       
     
@@ -68,15 +94,17 @@ export class CarritoComponent {
     }
     eliminar(id:number){
       localStorage.removeItem('data');
-      this.total=0;
+      let totalEliminado=0;
       let index = this.data.findIndex((producto: any) => producto.idProducto === id);
-      this.total+= this.data[index].precio * this.data[index].cantidadAdded;
-        this.cantidadTotal-= this.data[index].cantidadAdded;
+      totalEliminado= this.data[index].precio * this.data[index].cantidadAdded;
+      this.total=Number((this.total - totalEliminado).toFixed(2));
+      this.cantidadTotal-= this.data[index].cantidadAdded;
       this.data.splice(index,1);
   
     $( "#txtPopupCantidad" ).empty();
     $( "#txtPopupCantidad" ).append( document.createTextNode( this.data.length.toString() ));
     
     localStorage.setItem('data', JSON.stringify(this.data));
+
     }
 }

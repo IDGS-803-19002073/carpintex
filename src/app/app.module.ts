@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AlumnosComponent } from './utl/alumnos/alumnos.component';
 import { MenuComponent } from './menu_admin/menu.component';
 import { HomeComponent } from './home/home.component';
-import { AgregarComponent } from './utl/agregar/agregar.component';
 import { EditarComponent } from './utl/editar/editar.component';
+import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
@@ -22,16 +20,20 @@ import { SignupComponent } from './home/signup/signup.component';
 import { PedidosComponent } from './home/pedidos/pedidos.component';
 import { CarritoComponent } from './home/carrito/carrito.component';
 import { PagoComponent } from './home/pago/pago.component';
-
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { EnviosComponent } from './menu_admin/envios/envios.component';
+import { PedidosAdminComponent } from './menu_admin/pedidos-admin/pedidos-admin.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlumnosComponent,
+    // AlumnosComponent,
     MenuComponent,
     AlumnoFilterPipe,
     HomeComponent,
-    AgregarComponent,
+    // AgregarComponent,
     EditarComponent,
     LoginComponent,
     InicioComponent,
@@ -42,6 +44,10 @@ import { PagoComponent } from './home/pago/pago.component';
     PedidosComponent,
     CarritoComponent,
     PagoComponent,
+    UnauthorizedComponent,
+    NotFoundComponent,
+    EnviosComponent,
+    PedidosAdminComponent,
   ],
   imports: [
     // NgbModule,
@@ -51,6 +57,8 @@ import { PagoComponent } from './home/pago/pago.component';
     MaterialModule,
     FormsModule,
     HttpClientModule,
+    MatPaginatorModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

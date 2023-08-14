@@ -15,29 +15,29 @@
                             <form>
                               <div class="form-group">
                                 <label for="nombre">Nombre Completo</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre completo">
+                                <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="Ingrese su nombre completo">
                               </div>
                               <div class="form-group">
                                 <label for="direccion">Dirección</label>
-                                <input type="text" class="form-control" id="direccion" placeholder="Ingrese su dirección">
+                                <input type="text" class="form-control" name="direccion" [(ngModel)]="direccion" placeholder="Ingrese su dirección">
                               </div>
                               <div class="row">
                                 <div class=" col-6">
                                   <label for="ciudad">Ciudad</label>
-                                  <input type="text" class="form-control" id="ciudad" placeholder="Ingrese su ciudad">
+                                  <input type="text" class="form-control" name="ciudad" [(ngModel)]="ciudad" placeholder="Ingrese su ciudad">
                                 </div>
                                 <div class="col-6">
                                   <label for="codigoPostal">Código Postal</label>
-                                  <input type="text" class="form-control" id="codigoPostal" placeholder="Ingrese su código postal">
+                                  <input type="text" class="form-control" name="codigoPostal" [(ngModel)]="codigoPostal" placeholder="Ingrese su código postal">
                                 </div>
                               </div>
                               <div class="form-group">
                                 <label for="telefono">Teléfono</label>
-                                <input type="text" class="form-control" id="telefono" placeholder="Ingrese su número de teléfono">
+                                <input type="text" class="form-control" name="telefono" [(ngModel)]="telefono" placeholder="Ingrese su número de teléfono">
                               </div>
                             </form>
                           </div>
-                          <button class="btn btn-primary mt-3" (click)="showBankingForm = true">Siguiente</button>
+                          <button class="btn btn-primary mt-3" (click)="showBanking()">Siguiente</button>
 
                         </div>
 
@@ -72,14 +72,14 @@
                             <form>
                               <div class="form-group">
                                 <label for="nombreTitular">Nombre del Titular de la Cuenta</label>
-                                <input type="text" class="form-control" id="nombreTitular" placeholder="Ingrese el nombre del titular">
+                                <input type="text" class="form-control" name="nombreTitular" [(ngModel)]="nombreTitular" placeholder="Ingrese el nombre del titular">
                               </div>
                               <div class="form-group row mt-2">
-                                <div class="col-6"><input type="text" class="form-control" id="numeroCuenta" placeholder="Ingrese el número de cuenta"></div>
-                                <div class="col-2"><input type="text" class="form-control" id="ccv" placeholder="CCV"></div>
+                                <div class="col-6"><input type="text" class="form-control" [(ngModel)]="numeroCuenta" name="numeroCuenta" placeholder="Ingrese el número de cuenta"></div>
+                                <div class="col-2"><input type="text" class="form-control" [(ngModel)]="ccv" name="ccv" placeholder="CCV"></div>
                                 <!-- <label for="numeroCuenta">Fecha Caducidad</label> -->
-                                <div class="col-2"><input type="text" class="form-control" id="mes" placeholder="mes"></div>
-                                <div class="col-2"><input type="text" class="form-control" id="anio" placeholder="año"></div>
+                                <div class="col-2"><input type="text" class="form-control" [(ngModel)]="mes" name="mes" placeholder="mes"></div>
+                                <div class="col-2"><input type="text" class="form-control" [(ngModel)]="anio" name="anio" placeholder="año"></div>
 
 
                               </div>

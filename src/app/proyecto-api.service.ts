@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AlumnosUtl } from './interfaces/utl.Interface';
+import { AlumnosUtl, Pedido } from './interfaces/Home.Interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -7,37 +7,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProyectoApiService {
-
-
-  private _alumnosUtl:AlumnosUtl[]=[
-    {
-      id:1234,
-      nombre:'pedro',
-      edad:23,
-      correo: 'pedro@gmail.com',
- 
-    },
-    {
-      id:772,
-      nombre:'Paulina',
-      edad:23,
-      correo: 'paulina@gmail.com',
-    },
- 
-    {
-      id:22,
-      nombre:'Dario',
-      edad:23,
-      correo: 'dario@gmail.com',
- 
-    },
-  ]
  
   constructor(private http:HttpClient) { }
  
-get alumnos():AlumnosUtl[]{
-  return[...this._alumnosUtl]
-}
+// get alumnos():AlumnosUtl[]{
+//   return[...this._alumnosUtl]
+// }
  
 public getAlumnos():Observable<AlumnosUtl[]>{
   return this.http.get<AlumnosUtl[]>('https://localhost:7132/api/Grupos')
@@ -49,6 +24,37 @@ agregarNuevoAlumno(datos:AlumnosUtl){
 
 public getProductos():Observable<AlumnosUtl[]>{
   return this.http.get<AlumnosUtl[]>('https://localhost:7241/api/Producto')
+}
+
+public   login(correo: string, contrasena: string) {
+  const url = `https://localhost:7241/api/Usuario/login/${encodeURIComponent(correo)}?password=${encodeURIComponent(contrasena)}`;
+  return this.http.get<AlumnosUtl[]>(url);
+}
+
+agregarPedido(datos:Pedido){
+  return this.http.post('https://localhost:7241/api/Pedido',datos)
+}
+
+public getPedidos(id:number){
+  return this.http.get('https://localhost:7241/api/Pedido/'+id)
+}
+
+public getAllPedidos():Observable<Pedido[]>{
+  return this.http.get<Pedido[]>('https://localhost:7241/api/Pedido')
+}
+
+updatePedido(id: number, nuevoEstatus: number): Observable<any> {
+  const body = nuevoEstatus;
+  return this.http.put(`https://localhost:7241/api/Pedido/${id}`, body);
+}
+
+public getEnvios():Observable<AlumnosUtl[]>{
+  return this.http.get<AlumnosUtl[]>('https://localhost:7241/api/Envios')
+}
+
+updateEnvios(id: number, nuevoEstatus: number): Observable<any> {
+  const body = nuevoEstatus;
+  return this.http.put(`https://localhost:7241/api/Envios/${id}`, body);
 }
 
 

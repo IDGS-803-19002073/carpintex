@@ -57,14 +57,16 @@ popoverContent!: string
 // popoverContent: string = "<span id='txtPopupCantidad' class='text-white badge rounded-pill badge-notification bg-danger'>0</span> articulos añadidos";
 ngAfterViewInit() {
   let content = ''; // Start of popover content
-  if (this.dataFromLocalStorage !== null) {
+
+  if (this.dataFromLocalStorage !== null && this.dataFromLocalStorage!='[]') {
+    
           this.ecomServices = JSON.parse(this.dataFromLocalStorage) ;
           $.each(this.ecomServices, (index: number, value : any) => {
             content += '<div class="container mt-2">';
             content += '<div class="row">';
 
             content += '<div class="col-2">';
-            content+='<img src="../../../assets/images/bolsas-de-compra.png" class="card-img" alt="..." style="height: 20px; width: 20px; ">    '
+            content+='<img src="../../../assets/images/img1.jpg" class="card-img" alt="..." style="height: 30px; width: 30px; ">    '
 
             content += '</div>' 
 
